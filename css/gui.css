@@ -1,0 +1,40 @@
+html,
+body{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.c-label{
+	padding-top: 7px;
+}
+
+.footer{
+	position: absolute;
+	bottom: 5px;
+	left: 10px;
+	width: 100%;
+}
+
+#mode_countdown,
+#mode_bigClock,
+#mode_stopwatch{
+	display: none;
+}
+
+.margin-top-s{
+	margin-top: 5px;
+}
+
+.btn-grp-pad-top{
+	padding-top: 6px;
+}
+
+#other_settings{
+	margin-top: 22px;
+}

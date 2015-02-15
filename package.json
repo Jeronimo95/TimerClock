@@ -1,0 +1,9 @@
+{
+  "name": "timer-clock",
+  "main": "html/gui.html",
+  "window": {
+    "title": "TimerClock",
+    "icon": "clock24.png",
+    "toolbar": false
+  }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TimerClock Display</title>
+	<script src="../js/inc/jquery-1.11.2.min.js"></script>
+	<link rel="stylesheet" href="../css/display.css">
+	<script>
+	var gui = require('nw.gui');
+	$( window ).resize(function() {
+		$("#main_feature").css("font-size", "12vw");
+		$("#end-time-cont").css("font-size", "2vw");
+		$("#current-time-cont").css("font-size", "1.7vw");
+	});
+	$(document).ready(function() {
+		$("body").bind("keydown", function(event) {
+			if(event.altKey && event.ctrlKey && event.which == 68) {
+				gui.Window.get().showDevTools();
+			}
+		});
+	});
+	</script>
+</head>
+<body id="body" class="dark">
+<div class="main_cont">
+	<h1 id="main_feature" class="item">00:00:00</h1>
+	<div id="end-time-cont">
+		<h1 id="endTime">00:00:00</h1>
+	</div>
+</div>
+<div id="current-time-cont">
+	<h1 id="currentTime">00:00:00</h1>
+</div>
+</body>
+</html>

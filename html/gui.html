@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TimerClock Control</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/gui.css">
+
+	<script src="../js/main.js"></script>
+	<script src="../js/inc/jquery-1.11.2.min.js"></script>
+	<script src="../js/inc/countdown.js"></script>
+	<script src="../js/inc/timer.js"></script>
+	<script src="../js/clock.js"></script>
+	<script src="../js/countupdown.js"></script>
+	<script src="../js/stopwatch.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("body").bind("keydown", function(event) {
+				if(event.altKey && event.ctrlKey && event.which == 68) {
+					win_c.showDevTools();
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1 id="main_feature">00:00:00</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-3 c-label bold">
+			Mode:
+		</div>
+		<div class="col-xs-9">
+			<select class="form-control" id="mode_sel">
+				<option value="toTime">Count down/up to time</option>
+				<option value="countdown">Countdown timer</option>
+				<option value="stopwatch">Stopwatch</option>
+				<option value="bigClock">Big Clock</option>
+			</select>
+		</div>
+	</div>
+
+	<div id="mode_toTime" class="row margin-top-s">
+		<div class="col-xs-3 c-label bold">
+			Enter Time:
+		</div>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" id="toTime_input"/>
+			<p class="text-muted small">HH:MM | HH:MM:SS | h:mm am/pm | yyyy-mm-dd HH:MM:SS</p>
+			<button class="btn" id="toTime_set">Set</button>
+			<button class="btn btn-danger" id="toTime_clear">Clear</button>
+		</div>
+	</div>
+	
+	<div id="mode_countdown" class="row margin-top-s">
+		<div class="col-xs-3 c-label bold">
+			Enter Length:
+		</div>
+		<div class="col-xs-9">
+			<input type="text" class="form-control" id="countdown_input"/>
+			<p class="text-muted small">MM | HH:MM | HH:MM:SS</p>
+			<button class="btn btn-success" id="countdown_start">Start</button>
+			<button class="btn btn-danger" id="countdown_stop">Stop</button>
+		</div>
+	</div>
+
+	<div id="mode_stopwatch">
+		<div class="col-xs-9 col-xs-offset-3 margin-top-s">
+				<button class="btn btn-success" id="stopwatch_start">Start</button>
+				<button class="btn btn-danger" id="stopwatch_clear">Clear</button>
+			</div>
+	</div>
+
+	<!-- OTHER SETTINGS -->
+	<div id="other_settings" class="row">
+		<div class="col-xs-12">
+			<h4>Settings</h4>
+		</div>
+		<div class="col-xs-7 c-label bold">
+			Clock mode:
+		</div>
+		<div class="col-xs-5">
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-primary active">
+					<input type="radio" name="setting_timemode" id="setting_timemode_24" value="24" autocomplete="off" checked> 24h
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="setting_timemode" id="setting_timemode_12" value="12" autocomplete="off"> 12h
+				</label>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div class="col-xs-7 c-label bold">
+			Show  Seconds:
+		</div>
+		<div class="col-xs-5 btn-grp-pad-top">
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-primary active">
+					<input type="radio" name="setting_seconds" id="setting_seconds_t" value="true" autocomplete="off" checked> Yes
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="setting_seconds" id="setting_seconds_f" value="false" autocomplete="off"> No
+				</label>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div class="col-xs-7 c-label bold">
+			Show milliseconds:
+		</div>
+		<div class="col-xs-5 btn-grp-pad-top">
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-primary">
+					<input type="radio" name="setting_milliseconds" id="setting_milliseconds_t" value="true" autocomplete="off"> Yes
+				</label>
+				<label class="btn btn-primary active">
+					<input type="radio" name="setting_milliseconds" id="setting_milliseconds_f" value="false" autocomplete="off" checked> No
+				</label>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div class="col-xs-7 c-label bold">
+			Show end time:
+		</div>
+		<div class="col-xs-5 btn-grp-pad-top">
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-primary">
+					<input type="radio" name="setting_endtime" id="setting_endtime_t" value="true" autocomplete="off"> Yes
+				</label>
+				<label class="btn btn-primary active">
+					<input type="radio" name="setting_endtime" id="setting_endtime_f" value="false" autocomplete="off" checked> No
+				</label>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div class="col-xs-7 c-label bold">
+			Show current time:
+		</div>
+		<div class="col-xs-5 btn-grp-pad-top">
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-primary">
+					<input type="radio" name="setting_currenttime" id="setting_currenttime_t" value="true" autocomplete="off"> Yes
+				</label>
+				<label class="btn btn-primary active">
+					<input type="radio" name="setting_currenttime" id="setting_currenttime_f" value="false" autocomplete="off" checked> No
+				</label>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+
+		<div class="col-xs-3 c-label bold">
+			Theme:
+		</div>
+		<div class="col-xs-9 btn-grp-pad-top">
+			<select class="form-control" id="theme_sel">
+				<option value="dark">Dark</option>
+				<option value="light">Light</option>
+				<option value="black">Black</option>
+				<option value="white">White</option>
+				<option value="red">Red</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="footer">
+		<button id="c_fullscreenDisplay" class="btn">Fullscreen Display</button>
+		<p class="text-muted small">TimerClock v<span id="versionNumber"></span> | Licensed under The MIT License | <a href="#" id="about">About</a></p>
+	</div>
+</div>
+<script src="../js/inc/bootstrap.min.js"></script>
+<script src="../js/gui.js"></script>
+</body>
+</html>
