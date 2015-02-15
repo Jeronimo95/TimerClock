@@ -48,6 +48,6 @@ function currentTime() {
     }else{
         time.s = "";
     }
-   win_d.window.document.getElementById("currentTime").innerHTML= time.h+":"+time.m+time.s+time.ms+time.ampm;
+   win_d.window.$("#currentTime").html(time.h+":"+time.m+time.s+time.ms+time.ampm);
 }
 var CurrentTimeTimer = global.setInterval(currentTime, 50);
