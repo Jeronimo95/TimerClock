@@ -1,4 +1,4 @@
-global.timerclock = {version: "1.0",
+global.timerclock = {version: "1.1.0 DEV",
 					 gitURL: "https://github.com/saferindoors/TimerClock"};
 var gui = require('nw.gui');
 
