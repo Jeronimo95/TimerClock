@@ -37,7 +37,23 @@ $('#mode_sel').on('change', function() {
 });
 
 $('#theme_sel').on('change', function() {
-	win_d.window.$("body").attr("class", this.value);
+	if(win_d.window.$("#customCSS").length){
+		win_d.window.$("#customCSS").remove()
+	}
+	if(this.value==="custom"){
+		$("#customCSScont").show();
+		win_d.window.$("body").attr("class", this.value);
+	}else{
+		$("#customCSScont").hide();
+		win_d.window.$("body").attr("class", this.value);
+	}
+});
+
+$("#customCSSgo").click(function(){
+	if(win_d.window.$("#customCSS").length){
+		win_d.window.$("#customCSS").remove()
+	}
+	win_d.window.$("head").append("<link id='customCSS' rel='stylesheet' href='"+$("#customCSSinput").val()+"'>");
 });
 
 

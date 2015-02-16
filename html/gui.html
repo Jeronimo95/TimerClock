@@ -5,8 +5,9 @@
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/gui.css">
 
-	<script src="../js/main.js"></script>
 	<script src="../js/lib/jquery-1.11.2.min.js"></script>
+	<script src="../js/main.js"></script>
+	<script src="../js/customthemes.js"></script>
 	<script src="../js/lib/countdown.js"></script>
 	<script src="../js/lib/timer.js"></script>
 	<script src="../js/clock.js"></script>
@@ -164,7 +165,12 @@
 				<option value="black">Black</option>
 				<option value="white">White</option>
 				<option value="red">Red</option>
+				<option value="custom">Custom</option>
 			</select>
+			<div id="customCSScont">
+				<input type='file' id="customCSSinput" accept=".css" />
+				<button id="customCSSgo" class="btn btn-primary">Use selected theme</button>
+			</div>
 		</div>
 	</div>
 

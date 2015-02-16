@@ -23,8 +23,17 @@ body{
 
 #mode_countdown,
 #mode_bigClock,
-#mode_stopwatch{
+#mode_stopwatch,
+#customCSScont{
 	display: none;
+}
+
+#customCSScont{
+	margin-top: 7px;
+}
+
+#customCSSgo{
+	margin-top: 5px;
 }
 
 .margin-top-s{
