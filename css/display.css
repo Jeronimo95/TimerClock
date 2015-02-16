@@ -26,10 +26,6 @@ body{
 	flex-flow: column;
 }
 
-#main_feature{
-	font-size: 12vw;
-}
-
 #current-time-cont{
 	position: absolute;
 	bottom: 20px;
@@ -42,6 +38,17 @@ body{
 	padding-right: 22vw;
 	margin-top: -6vh;
 	font-size: 2vw;
+}
+
+/* FONT SIZES */
+.f-long{
+	font-size: 12vw;
+}
+.f-med{
+	font-size: 18vw;
+}
+.f-short{
+	font-size: 24vw;
 }
 
 /* THEMES */

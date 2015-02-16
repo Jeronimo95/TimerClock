@@ -6,11 +6,21 @@
 	<link rel="stylesheet" href="../css/display.css">
 	<script>
 	var gui = require('nw.gui');
-	$( window ).resize(function() {
-		$("#main_feature").css("font-size", "12vw");
-		$("#end-time-cont").css("font-size", "2vw");
-		$("#current-time-cont").css("font-size", "1.7vw");
-	});
+
+	function setMainTextSizeByLength(){
+		var len = $("#main_feature").text().length;
+
+		if(len<6){
+			$("#main_feature").attr("class", "f-short");
+		}else if(len>6&&len<9){
+			$("#main_feature").attr("class", "f-med");
+		}else if(len>=9){
+			$("#main_feature").attr("class", "f-long");
+		}
+	}
+	
+	global.setInterval(setMainTextSizeByLength, 1000);
+
 	$(document).ready(function() {
 		$("body").bind("keydown", function(event) {
 			if(event.altKey && event.ctrlKey && event.which == 68) {
@@ -22,7 +32,7 @@
 </head>
 <body id="body" class="dark">
 <div class="main_cont">
-	<h1 id="main_feature" class="item">00:00:00</h1>
+	<h1 id="main_feature">00:00:00</h1>
 	<div id="end-time-cont">
 		<h1 id="endTime">00:00:00</h1>
 	</div>
