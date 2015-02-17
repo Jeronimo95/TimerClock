@@ -11,12 +11,12 @@ body{
 	font-family: sans-serif;
 }
 
-#current-time-cont,
-#end-time-cont{
+#current_time_container,
+#end_time_container{
 	display: none;
 }
 
-.main_cont{
+#main_container{
 	display: -webkit-flex;
 	align-items: center;
 	justify-content: center;
@@ -26,17 +26,17 @@ body{
 	flex-flow: column;
 }
 
-#main-feature{
+#main_feature{
 	margin-bottom: -15px;
 }
 
-#current-time-cont{
+#current_time_container{
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
 	font-size: 1.7vw;
 }
-#end-time-cont{
+#end_time_container{
 	width: 100%;
 	text-align: right;
 	padding-right: 22vw;
@@ -44,13 +44,13 @@ body{
 }
 
 /* FONT SIZES */
-.f-long{
+.f_long{
 	font-size: 12vw;
 }
-.f-med{
+.f_med{
 	font-size: 18vw;
 }
-.f-short{
+.f_short{
 	font-size: 24vw;
 }
 

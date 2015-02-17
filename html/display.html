@@ -11,11 +11,11 @@
 		var len = $("#main_feature").text().length;
 
 		if(len<6){
-			$("#main_feature").attr("class", "f-short");
+			$("#main_feature").attr("class", "f_short");
 		}else if(len>6&&len<9){
-			$("#main_feature").attr("class", "f-med");
+			$("#main_feature").attr("class", "f_med");
 		}else if(len>=9){
-			$("#main_feature").attr("class", "f-long");
+			$("#main_feature").attr("class", "f_long");
 		}
 	}
 	
@@ -30,14 +30,14 @@
 	});
 	</script>
 </head>
-<body id="body" class="dark">
-<div class="main_cont">
+<body class="dark">
+<div id="main_container">
 	<h1 id="main_feature">00:00:00</h1>
-	<div id="end-time-cont">
+	<div id="end_time_container">
 		<h1 id="endTime">00:00:00</h1>
 	</div>
 </div>
-<div id="current-time-cont">
+<div id="current_time_container">
 	<h1>Currently: <span id="currentTime">00:00:00</span></h1>
 </div>
 </body>

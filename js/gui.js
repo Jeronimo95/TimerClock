@@ -1,14 +1,14 @@
 function setCurrentAndEndTimeVisablities(){
 	if(endTimeAvbl&&endTimeAct){
-		win_d.window.$("#end-time-cont").show();
+		win_d.window.$("#end_time_container").show();
 	}else{
-		win_d.window.$("#end-time-cont").hide();
+		win_d.window.$("#end_time_container").hide();
 	}
 
 	if(currentTimeAvbl&&currentTimeAct){
-		win_d.window.$("#current-time-cont").show();
+		win_d.window.$("#current_time_container").show();
 	}else{
-		win_d.window.$("#current-time-cont").hide();
+		win_d.window.$("#current_time_container").hide();
 	}
 }
 $('#mode_sel').on('change', function() {
