@@ -26,6 +26,10 @@ body{
 	flex-flow: column;
 }
 
+#main-feature{
+	margin-bottom: -15px;
+}
+
 #current-time-cont{
 	position: absolute;
 	bottom: 20px;
@@ -36,7 +40,6 @@ body{
 	width: 100%;
 	text-align: right;
 	padding-right: 22vw;
-	margin-top: -6vh;
 	font-size: 2vw;
 }
 
