@@ -1,5 +1,17 @@
-global.timerclock = {version: "1.1.0 DEV",
-					 gitURL: "https://github.com/saferindoors/TimerClock"};
+global.timerclock = {version: {
+					 	maj: 1,
+					 	min: 1,
+					 	pat: 0,
+					 	sff: ""
+					 },
+					 website: "https://github.com/saferindoors/TimerClock",
+					 updateURL: "http://updates.saferindoors.com/timerclock.json"};
+
+global.timerclock.getversionString = function(){
+	var v = global.timerclock.version
+	return v.maj+"."+v.min+"."+v.pat+" "+v.sff;
+}
+
 var gui = require('nw.gui');
 
 var w = window.screen.availWidth;

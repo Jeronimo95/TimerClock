@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TimerClock - Update Available</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="../js/lib/jquery-1.11.2.min.js"></script>
+
+	<style>
+		body{
+			padding: 8px;
+		}
+	</style>
+	<script>
+		var gui = require('nw.gui');
+	</script>
+</head>
+<body>
+
+<h1>TimerClock Update Available</h1>
+<p>
+	Your Version: <span id="currentVersion"></span><br/>
+	Latest Version: <span id="latestVersion"></span><br/>
+</p>
+<a href="#" id="updateSite">Open downloads page</a>
+
+<script>
+	$("#currentVersion").text(global.timerclock.getversionString());
+
+	var latestvOB = global.timerclock.versionLATEST;
+	var latestvST = latestvOB.maj+"."+latestvOB.min+"."+latestvOB.pat;
+	$("#latestVersion").text(latestvST);
+
+	$("#updateSite").click(function(){
+		gui.Shell.openExternal(global.timerclock.updateSite);
+		return false;
+	});
+
+</script>
+</body>
+</html>

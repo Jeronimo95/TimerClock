@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>About TimerClock</title>
+	<script src="../js/lib/jquery-1.11.2.min.js"></script>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<style>
 		body{
@@ -17,8 +18,8 @@
 	</script>
 </head>
 <body>
-<h1>TimerClock</h1>
-<a href="#" onclick='o(global.timerclock.gitURL);'>Source avalible at GitHub</a>
+<h1>TimerClock <small id="version"></small></h1>
+<a href="#" onclick='o(global.timerclock.website);'>Website</a>
 <br/>
 <br/>
 <pre>
@@ -52,5 +53,8 @@ THE SOFTWARE.
 	<li>Bootstrap <a href="#" onclick='o("http://getbootstrap.com/");'>http://getbootstrap.com/</a> (Licensed under The MIT License.)</li>
 	<li>jQuery <a href="#" onclick='o("http://getbootstrap.com/");'>https://jquery.org/</a> (Licensed under The MIT License.)</li>
 </ul>
+<script>
+	$("#version").text(global.timerclock.getversionString());
+</script>
 </body>
 </html>

@@ -160,4 +160,4 @@ $("#about").click(function(){
 	return false;
 });
 
-$("#versionNumber").html(global.timerclock.version);
+$("#versionNumber").html(global.timerclock.getversionString());
