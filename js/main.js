@@ -22,9 +22,9 @@ var win_c = gui.Window.get();
 var win_d = gui.Window.get(open("display.html"));
 
 win_c.moveTo(10, 10);
-win_c.resizeTo(550, 700)
-win_d.resizeTo(960, 540)
-win_d.moveTo(thirdth, 10);
+win_c.resizeTo(550, 700);
+win_d.resizeTo(960, 540);
+//win_d.moveTo(thirdth, 10);
 
 win_c.focus();
 
