@@ -30,7 +30,7 @@ function stopwatch_start() {
 		stopwatch = new Timer();
 	}
 	stopwatch.start();
-	clockTimer = global.setInterval(stopwatch_display,100);
+	clockTimer = global.setInterval(stopwatch_display,5);
 }
 
 function stopwatch_clear() {
