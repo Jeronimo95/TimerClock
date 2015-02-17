@@ -50,4 +50,6 @@ function currentTime() {
     }
    win_d.window.$("#currentTime").html(time.h+":"+time.m+time.s+time.ms+time.ampm);
 }
-var CurrentTimeTimer = global.setInterval(currentTime, 50);
+win_d.on('loaded', function() {
+    var CurrentTimeTimer = global.setInterval(currentTime, 100);
+});
