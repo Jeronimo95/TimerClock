@@ -12,6 +12,8 @@ function setCurrentAndEndTimeVisablities(){
 	}
 }
 $('#mode_sel').on('change', function() {
+	win_d.window.$("#main_feature").removeClass("blink");
+	win_d.window.$("#overtime_text").hide();
 	timerClear();
 	$("#mode_toTime").hide();
 	$("#mode_countdown").hide();
@@ -27,14 +29,30 @@ $('#mode_sel').on('change', function() {
 		currentTimeAvbl = true;
 		endTimeAvbl = false;
 	}else if(this.value==="toTime"){
+		overtimemode = $('#toTime_overtime_mode').val();
 		currentTimeAvbl = true;
 		endTimeAvbl = true;
 	}else if(this.value==="countdown"){
+		overtimemode = $('#countdown_overtime_mode').val();
 		currentTimeAvbl = true;
 		endTimeAvbl = true;
 	}
 	setCurrentAndEndTimeVisablities();
 });
+
+
+$('#toTime_overtime_mode').on('change', function() {
+	overtimemode = this.value;
+	win_d.window.$("#main_feature").removeClass("blink");
+	win_d.window.$("#overtime_text").hide();
+});
+$('#countdown_overtime_mode').on('change', function() {
+	overtimemode = this.value;
+	win_d.window.$("#main_feature").removeClass("blink");
+	win_d.window.$("#overtime_text").hide();
+});
+
+
 
 $('#theme_sel').on('change', function() {
 	if(win_d.window.$("#customCSS").length){
@@ -81,6 +99,9 @@ $('#toTime_input').keyup(function (event) {
 
 $("#toTime_clear").click(function(){
 	timerClear();
+	win_d.window.$("#main_feature").removeClass("blink");
+	win_d.window.$("#overtime_text").hide();
+
 });
 
 
@@ -98,6 +119,8 @@ $('#countdown_input').keydown(function (event) {
 
 $("#countdown_stop").click(function(){
 	timerClear();
+	win_d.window.$("#main_feature").removeClass("blink");
+	win_d.window.$("#overtime_text").hide();
 })
 
 

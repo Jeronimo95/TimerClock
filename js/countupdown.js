@@ -9,6 +9,21 @@ function countTo(time){
 	clockTimer = countdown(
 		time,
 		function(ts){
+
+			if(ts.value>0){
+				if(overtimemode==="continueOvertime"){
+					win_d.window.$("#overtime_text").show();
+				}else if(overtimemode==="stop"){
+					timerClear();
+				}else if(overtimemode==="stopOvertime"){
+					timerClear();
+					win_d.window.$("#overtime_text").show();
+				}else if(overtimemode==="stopBlink"){
+					timerClear();
+					win_d.window.$("#main_feature").addClass("blink");
+				}
+			}
+
 			var h = addZero(ts.hours, 2);
 			var m = addZero(ts.minutes, 2);
 			var s = addZero(ts.seconds, 2);

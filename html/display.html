@@ -11,11 +11,17 @@
 		var len = $("#main_feature").text().length;
 
 		if(len<6){
-			$("#main_feature").attr("class", "f_short");
+			$("#main_feature").addClass("f_short");
+			$("#main_feature").removeClass("f_med");
+			$("#main_feature").removeClass("f_long");
 		}else if(len>6&&len<9){
-			$("#main_feature").attr("class", "f_med");
+			$("#main_feature").addClass("f_med");
+			$("#main_feature").removeClass("f_short");
+			$("#main_feature").removeClass("f_long");
 		}else if(len>=9){
-			$("#main_feature").attr("class", "f_long");
+			$("#main_feature").addClass("f_long");
+			$("#main_feature").removeClass("f_short");
+			$("#main_feature").removeClass("f_med");
 		}
 	}
 	
@@ -32,6 +38,7 @@
 </head>
 <body class="dark">
 <div id="main_container">
+	<h1 id="overtime_text">overtime</h1>
 	<h1 id="main_feature">00:00:00</h1>
 	<div id="end_time_container">
 		<h1 id="endTime">00:00:00</h1>

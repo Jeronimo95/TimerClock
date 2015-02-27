@@ -1,6 +1,6 @@
 global.timerclock = {version: {
 					 	maj: 1,
-					 	min: 1,
+					 	min: 2,
 					 	pat: 0,
 					 	sff: ""
 					 },
@@ -22,9 +22,8 @@ var win_c = gui.Window.get();
 var win_d = gui.Window.get(open("display.html"));
 
 win_c.moveTo(10, 10);
-win_c.resizeTo(550, 700);
+win_c.resizeTo(550, 740);
 win_d.resizeTo(960, 540);
-//win_d.moveTo(thirdth, 10);
 
 win_c.focus();
 
@@ -36,6 +35,7 @@ win_d.on('close', function() {return false;});
 
 //INIT VARS
 var mode = "toTime";
+var overtimemode = "continue";
 var displayMilliseconds = false;
 var displaySeconds = true;
 var is24h = true;

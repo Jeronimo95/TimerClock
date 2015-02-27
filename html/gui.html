@@ -51,6 +51,20 @@
 		<div class="col-xs-9">
 			<input type="text" class="form-control" id="toTime_input"/>
 			<p class="text-muted small">HH:MM | HH:MM:SS | h:mm am/pm | yyyy-mm-dd HH:MM:SS</p>
+		</div>
+		<div class="col-xs-3 c-label bold">
+			At 00:00:00:
+		</div>
+		<div class="col-xs-9">
+			<select class="form-control" id="toTime_overtime_mode">
+				<option value="continue">Continue counting up</option>
+				<option value="continueOvertime">Continue counting up and display "OVERTIME"</option>
+				<option value="stop">Stop</option>
+				<option value="stopOvertime">Stop and display "OVERTIME"</option>
+				<option value="stopBlink">Stop and flash 00:00:00</option>
+			</select>
+		</div>
+		<div class="col-xs-9 col-xs-offset-3 margin-top-s">
 			<button class="btn" id="toTime_set">Set</button>
 			<button class="btn btn-danger" id="toTime_clear">Clear</button>
 		</div>
@@ -63,6 +77,20 @@
 		<div class="col-xs-9">
 			<input type="text" class="form-control" id="countdown_input"/>
 			<p class="text-muted small">MM | HH:MM | HH:MM:SS</p>
+		</div>
+		<div class="col-xs-3 c-label bold">
+			At 00:00:00:
+		</div>
+		<div class="col-xs-9">
+			<select class="form-control" id="countdown_overtime_mode">
+				<option value="continue">Continue counting up</option>
+				<option value="continueOvertime">Continue counting up and display "OVERTIME"</option>
+				<option value="stop" selected>Stop</option>
+				<option value="stopOvertime">Stop and display "OVERTIME"</option>
+				<option value="stopBlink">Stop and flash 00:00:00</option>
+			</select>
+		</div>
+		<div class="col-xs-9 col-xs-offset-3 margin-top-s">
 			<button class="btn btn-success" id="countdown_start">Start</button>
 			<button class="btn btn-danger" id="countdown_stop">Stop</button>
 		</div>
@@ -70,9 +98,9 @@
 
 	<div id="mode_stopwatch">
 		<div class="col-xs-9 col-xs-offset-3 margin-top-s">
-				<button class="btn btn-success" id="stopwatch_start">Start</button>
-				<button class="btn btn-danger" id="stopwatch_clear">Clear</button>
-			</div>
+			<button class="btn btn-success" id="stopwatch_start">Start</button>
+			<button class="btn btn-danger" id="stopwatch_clear">Clear</button>
+		</div>
 	</div>
 
 	<!-- OTHER SETTINGS -->
