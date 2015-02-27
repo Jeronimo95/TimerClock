@@ -32,6 +32,9 @@
 			if(event.altKey && event.ctrlKey && event.which == 68) {
 				gui.Window.get().showDevTools();
 			}
+			if(event.keyCode == 27) {
+				gui.Window.get().leaveFullscreen();
+			}
 		});
 	});
 	</script>
