@@ -2,7 +2,7 @@
 
 TimerClock is a simple to use Countdown / Stopwatch / Clock app
 
-[Download latest version (v1.1.0)](https://github.com/saferindoors/TimerClock/releases/tag/1.1.0)  
+[Download latest version (v1.2.0)](https://github.com/saferindoors/TimerClock/releases/tag/1.1.0)  
 [Installation / Usage instructions in the wiki](https://github.com/saferindoors/TimerClock/wiki)
 
 ![TimerClock Screenshot](http://i.imgur.com/TX9XiHg.png)
